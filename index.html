@@ -11,92 +11,69 @@
 </head>
 <body>
 
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-logo">YUKI HSU</h1>
+            <p class="splash-sub">EVOLUTION</p>
+            <div class="loading-line"></div>
+            <p class="tap-hint">TAP TO ENTER</p>
+        </div>
+    </div>
+
     <nav>
-        <div class="logo">YUKI HSU</div>
+        <div class="logo">YUKI</div>
         <div class="menu-icon">|||</div>
     </nav>
 
-    <header class="hero-section">
-        <div class="video-container">
-            <iframe 
-                id="hero-video"
-                src="https://www.youtube.com/embed/d02zUhEE288?autoplay=1&mute=1&controls=0&loop=1&playlist=d02zUhEE288&playsinline=1&showinfo=0&rel=0&enablejsapi=1&modestbranding=1" 
-                title="Yuki Hsu Background"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-            <div class="overlay"></div>
-        </div>
+    <div class="video-bg">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="main-content">
+        <header class="hero-section">
+            <div class="hero-text-box">
+                <h2 class="glitch-text">QUEEN'S BACK</h2>
+                <p class="hero-desc">從純真到無畏。見證達爾文的步伐。</p>
+            </div>
+        </header>
+
+        <section class="timeline-section">
+            <h2 class="section-title">LEGACY</h2>
+            <div class="timeline-container">
+                <div class="timeline-item left">
+                    <div class="year">1998</div>
+                    <div class="content-box">
+                        <h3>The First Step</h3>
+                        <p>飛起來 / 妙妙妙</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="year">2024</div>
+                    <div class="content-box special">
+                        <h3>Darwin's Pace</h3>
+                        <p>攻蛋 / 進化</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <div class="hero-content">
-            <h1 class="glitch-text" data-text="EVOLUTION">EVOLUTION</h1>
-            <div class="bilingual-copy">
-                <p class="en">From the innocent 'Diva' to the fearless 'Queen'. Witness the Metamorphosis.</p>
-                <p class="tw">從純真天后到無畏女王。見證，徐懷鈺的進化論。</p>
-            </div>
-            <div class="scroll-indicator">
-                <span>SCROLL TO DISCOVER</span>
-                <div class="line"></div>
-            </div>
-        </div>
-    </header>
+        <section class="news-section">
+             <h2 class="section-title">UPDATES</h2>
+             <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-text">
+                        <span class="date">LATEST</span>
+                        <h4>World Tour 2025</h4>
+                    </div>
+                </article>
+             </div>
+        </section>
 
-    <section class="timeline-section">
-        <h2 class="section-title">THE LEGACY</h2>
-        <div class="timeline-container">
-            <div class="timeline-item left">
-                <div class="year">1998</div>
-                <div class="content-box">
-                    <h3>The First Step</h3>
-                    <p>飛起來 / 妙妙妙</p>
-                    <span class="tag">Record Breaker</span>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="year">2000</div>
-                <div class="content-box">
-                    <h3>Love</h3>
-                    <p>愛 / 分飛</p>
-                    <span class="tag">Classic</span>
-                </div>
-            </div>
-            <div class="timeline-item center">
-                <div class="year">2024</div>
-                <div class="content-box special">
-                    <h3>DARWIN'S PACE</h3>
-                    <p>達爾文的步伐</p>
-                    <span class="tag">The Queen Returns</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="news-section">
-        <h2 class="section-title">LATEST PULSE</h2>
-        <div class="news-grid">
-            <article class="news-card">
-                <div class="news-image-placeholder" style="background: linear-gradient(45deg, #333, #111);"></div>
-                <div class="news-text">
-                    <span class="date">OCT 2025</span>
-                    <h4>Concert Tour Announced</h4>
-                    <p>The wait is over. World tour dates released.</p>
-                </div>
-            </article>
-            <article class="news-card">
-                <div class="news-image-placeholder" style="background: linear-gradient(45deg, #444, #222);"></div>
-                <div class="news-text">
-                    <span class="date">NOV 2025</span>
-                    <h4>Behind The Scenes</h4>
-                    <p>Exclusive look at the 'Pleasure' photoshoot.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 YUKI HSU OFFICIAL. DESIGNED FOR THE FANS.</p>
-    </footer>
+        <footer>&copy; 2025 YUKI HSU OFFICIAL</footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
