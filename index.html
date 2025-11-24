@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+TC:wght@300;500;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav>
         <div class="logo">YUKI HSU</div>
         <div class="menu-icon">|||</div>
@@ -17,16 +18,21 @@
 
     <header class="hero-section">
         <div class="video-container">
-            <video autoplay muted loop playsinline id="hero-video">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-video-of-a-man-with-heads-like-statues-32649-large.mp4" type="video/mp4">
-            </video>
+            <iframe 
+                id="hero-video"
+                src="https://www.youtube.com/embed/d02zUhEE288?autoplay=1&mute=1&controls=0&loop=1&playlist=d02zUhEE288&playsinline=1&showinfo=0&rel=0&enablejsapi=1&modestbranding=1" 
+                title="Yuki Hsu Background"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
             <div class="overlay"></div>
         </div>
         
         <div class="hero-content">
             <h1 class="glitch-text" data-text="EVOLUTION">EVOLUTION</h1>
             <div class="bilingual-copy">
-                <p class="en">From 'Diva' to 'Queen'. Witness the Metamorphosis.</p>
+                <p class="en">From the innocent 'Diva' to the fearless 'Queen'. Witness the Metamorphosis.</p>
                 <p class="tw">從純真天后到無畏女王。見證，徐懷鈺的進化論。</p>
             </div>
             <div class="scroll-indicator">
@@ -44,6 +50,7 @@
                 <div class="content-box">
                     <h3>The First Step</h3>
                     <p>飛起來 / 妙妙妙</p>
+                    <span class="tag">Record Breaker</span>
                 </div>
             </div>
             <div class="timeline-item right">
@@ -51,6 +58,7 @@
                 <div class="content-box">
                     <h3>Love</h3>
                     <p>愛 / 分飛</p>
+                    <span class="tag">Classic</span>
                 </div>
             </div>
             <div class="timeline-item center">
@@ -58,6 +66,7 @@
                 <div class="content-box special">
                     <h3>DARWIN'S PACE</h3>
                     <p>達爾文的步伐</p>
+                    <span class="tag">The Queen Returns</span>
                 </div>
             </div>
         </div>
@@ -67,6 +76,7 @@
         <h2 class="section-title">LATEST PULSE</h2>
         <div class="news-grid">
             <article class="news-card">
+                <div class="news-image-placeholder" style="background: linear-gradient(45deg, #333, #111);"></div>
                 <div class="news-text">
                     <span class="date">OCT 2025</span>
                     <h4>Concert Tour Announced</h4>
@@ -74,6 +84,7 @@
                 </div>
             </article>
             <article class="news-card">
+                <div class="news-image-placeholder" style="background: linear-gradient(45deg, #444, #222);"></div>
                 <div class="news-text">
                     <span class="date">NOV 2025</span>
                     <h4>Behind The Scenes</h4>
@@ -84,9 +95,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 YUKI HSU OFFICIAL.</p>
+        <p>&copy; 2025 YUKI HSU OFFICIAL. DESIGNED FOR THE FANS.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
