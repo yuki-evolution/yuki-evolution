@@ -1,166 +1,100 @@
 :root {
-    --primary: #ff0055; /* 霓虹粉 */
-    --bg: #0a0a0a;      /* 深黑 */
-    --text: #f0f0f0;    /* 銀白 */
-    --font-en: 'Cinzel', serif;
-    --font-tw: 'Noto Sans TC', sans-serif;
+    --primary: #ff0055;
+    --bg: #000;
+    --text: #fff;
+    --font-title: 'Cinzel', serif; /* 像 Jolin 那種優雅字體 */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Noto Sans TC', sans-serif; overflow-x: hidden; }
 
-body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: var(--font-tw);
-    overflow-x: hidden; /* 防止橫向捲軸 */
-}
-
-/* 導航 */
-nav {
+/* 1. 開場遮罩 (Splash Screen) */
+#splash-screen {
     position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-    mix-blend-mode: difference; /* 讓文字在任何背景都可見 */
-}
-
-.logo { font-family: var(--font-en); font-weight: 700; letter-spacing: 2px; font-size: 1.2rem; }
-.menu-icon { font-size: 1.5rem; cursor: pointer; }
-
-/* --- Hero Section (YouTube 背景設定) --- */
-.hero-section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background-color: #000;
+    z-index: 9999; /* 最上層 */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-}
-
-/* 這是最關鍵的部分：讓 YouTube 在手機上也能滿版 */
-.video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
-    pointer-events: none; /* 讓影片不能被點擊，確保滑動順暢 */
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw; 
-    height: 56.25vw; /* 16:9 比例 */
-    min-height: 100vh;
-    min-width: 177.77vh; /* 16 * 100vh / 9 */
-}
-
-/* 針對直式手機螢幕的強制修正 */
-@media (max-aspect-ratio: 16/9) {
-    .video-container iframe {
-        width: 177.77vh;
-        height: 100vh;
-    }
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* 漸層遮罩讓文字更清楚 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(10,10,10,0.9)); 
-}
-
-.hero-content {
     text-align: center;
-    z-index: 10;
-    opacity: 0; 
-    transform: translateY(50px);
-    padding: 0 20px;
+    cursor: pointer;
 }
 
-h1.glitch-text {
-    font-family: var(--font-en);
-    font-size: 3.5rem;
+.splash-logo {
+    font-family: var(--font-title);
+    font-size: 4rem;
     letter-spacing: 5px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
+    background: linear-gradient(45deg, #fff, #999, #fff); /* 金屬光澤 */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
-.bilingual-copy .en { font-size: 1rem; letter-spacing: 1px; margin-bottom: 8px; font-family: var(--font-en); }
-.bilingual-copy .tw { font-size: 0.9rem; color: #ccc; font-weight: 300; line-height: 1.6; }
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.7);
+.splash-sub {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
-.scroll-indicator .line {
-    width: 1px;
-    height: 40px;
-    background: var(--text);
-    margin-top: 10px;
-    animation: scrollDown 2s infinite;
+.loading-line {
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    margin: 0 auto 20px auto;
+    transition: width 0.5s;
 }
 
-@keyframes scrollDown {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    51% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
+.tap-hint {
+    font-size: 0.8rem;
+    color: #444;
+    animation: blink 2s infinite;
 }
 
-/* --- Timeline Section --- */
-.timeline-section { padding: 100px 20px; min-height: 100vh; position: relative; }
-.section-title { text-align: center; font-family: var(--font-en); font-size: 2.5rem; margin-bottom: 80px; color: transparent; -webkit-text-stroke: 1px var(--text); }
+@keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-.timeline-container { max-width: 800px; margin: 0 auto; position: relative; }
-.timeline-container::before { content: ''; position: absolute; left: 20px; top: 0; width: 1px; height: 100%; background: #333; }
-
-.timeline-item { margin-bottom: 80px; display: flex; flex-direction: column; margin-left: 40px; opacity: 0; transition: opacity 0.5s; }
-.timeline-item.active { opacity: 1; }
-
-.timeline-item .year { font-family: var(--font-en); font-size: 3.5rem; font-weight: bold; color: var(--primary); margin-bottom: 10px; }
-.timeline-item .content-box { background: rgba(255,255,255,0.05); padding: 20px; border-left: 3px solid var(--primary); backdrop-filter: blur(5px); }
-.tag { display: inline-block; font-size: 0.7rem; padding: 3px 8px; border: 1px solid #666; margin-top: 10px; border-radius: 20px; }
-
-/* 電腦版樣式微調 */
-@media (min-width: 768px) {
-    h1.glitch-text { font-size: 6rem; }
-    .timeline-container::before { left: 50%; transform: translateX(-50%); }
-    .timeline-item { margin-left: 0; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; }
-    .timeline-item.left { flex-direction: row-reverse; }
-    .timeline-item .content-box { width: 45%; }
-    .timeline-item.center { flex-direction: column; align-items: center; text-align: center; }
-    .timeline-item.center .content-box { width: 80%; border-left: none; border-top: 3px solid var(--primary); }
+/* 2. 背景影片 (全螢幕循環) */
+.video-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
 }
 
-/* --- News Section --- */
-.news-section { padding: 100px 30px; background-color: #050505; }
-.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-.news-card { border-bottom: 1px solid #333; padding-bottom: 20px; transition: 0.3s; }
-.news-image-placeholder { width: 100%; height: 200px; margin-bottom: 20px; }
-.news-text h4 { font-size: 1.5rem; margin: 10px 0; font-family: var(--font-en); }
-.news-text .date { color: var(--primary); font-size: 0.8rem; letter-spacing: 2px; }
+#bg-video {
+    width: 100%; height: 100%;
+    object-fit: cover; /* 確保填滿手機螢幕 */
+    filter: brightness(0.7); /* 稍微壓暗讓文字清楚 */
+}
 
-footer { text-align: center; padding: 50px 20px; font-size: 0.7rem; color: #555; letter-spacing: 1px; }
+/* 3. 主內容 */
+.main-content {
+    opacity: 0; /* 一開始隱藏，等開場動畫結束才出現 */
+    position: relative;
+    z-index: 10;
+}
 
+nav {
+    position: fixed; top: 0; width: 100%; padding: 20px;
+    display: flex; justify-content: space-between; z-index: 100;
+    mix-blend-mode: difference;
+}
+.logo { font-family: var(--font-title); font-weight: bold; }
+
+.hero-section { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.glitch-text { font-family: var(--font-title); font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,0,85,0.5); }
+.hero-desc { font-weight: 300; letter-spacing: 2px; color: #ccc; }
+
+.timeline-section, .news-section { padding: 80px 20px; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); min-height: 80vh; }
+.section-title { font-family: var(--font-title); font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: var(--primary); }
+
+.timeline-item { margin-bottom: 50px; border-left: 2px solid #333; padding-left: 20px; }
+.timeline-item .year { font-size: 2.5rem; font-family: var(--font-title); color: #fff; }
+
+.news-card { border-bottom: 1px solid #333; padding: 20px 0; }
+footer { text-align: center; padding: 30px; font-size: 0.7rem; color: #555; background: #000; }
