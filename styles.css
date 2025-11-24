@@ -1,1 +1,166 @@
+:root {
+    --primary: #ff0055; /* 霓虹粉 */
+    --bg: #0a0a0a;      /* 深黑 */
+    --text: #f0f0f0;    /* 銀白 */
+    --font-en: 'Cinzel', serif;
+    --font-tw: 'Noto Sans TC', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-tw);
+    overflow-x: hidden; /* 防止橫向捲軸 */
+}
+
+/* 導航 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    mix-blend-mode: difference; /* 讓文字在任何背景都可見 */
+}
+
+.logo { font-family: var(--font-en); font-weight: 700; letter-spacing: 2px; font-size: 1.2rem; }
+.menu-icon { font-size: 1.5rem; cursor: pointer; }
+
+/* --- Hero Section (YouTube 背景設定) --- */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 這是最關鍵的部分：讓 YouTube 在手機上也能滿版 */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none; /* 讓影片不能被點擊，確保滑動順暢 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; 
+    height: 56.25vw; /* 16:9 比例 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* 16 * 100vh / 9 */
+}
+
+/* 針對直式手機螢幕的強制修正 */
+@media (max-aspect-ratio: 16/9) {
+    .video-container iframe {
+        width: 177.77vh;
+        height: 100vh;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 漸層遮罩讓文字更清楚 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(10,10,10,0.9)); 
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    opacity: 0; 
+    transform: translateY(50px);
+    padding: 0 20px;
+}
+
+h1.glitch-text {
+    font-family: var(--font-en);
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
+}
+
+.bilingual-copy .en { font-size: 1rem; letter-spacing: 1px; margin-bottom: 8px; font-family: var(--font-en); }
+.bilingual-copy .tw { font-size: 0.9rem; color: #ccc; font-weight: 300; line-height: 1.6; }
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.7);
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 40px;
+    background: var(--text);
+    margin-top: 10px;
+    animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* --- Timeline Section --- */
+.timeline-section { padding: 100px 20px; min-height: 100vh; position: relative; }
+.section-title { text-align: center; font-family: var(--font-en); font-size: 2.5rem; margin-bottom: 80px; color: transparent; -webkit-text-stroke: 1px var(--text); }
+
+.timeline-container { max-width: 800px; margin: 0 auto; position: relative; }
+.timeline-container::before { content: ''; position: absolute; left: 20px; top: 0; width: 1px; height: 100%; background: #333; }
+
+.timeline-item { margin-bottom: 80px; display: flex; flex-direction: column; margin-left: 40px; opacity: 0; transition: opacity 0.5s; }
+.timeline-item.active { opacity: 1; }
+
+.timeline-item .year { font-family: var(--font-en); font-size: 3.5rem; font-weight: bold; color: var(--primary); margin-bottom: 10px; }
+.timeline-item .content-box { background: rgba(255,255,255,0.05); padding: 20px; border-left: 3px solid var(--primary); backdrop-filter: blur(5px); }
+.tag { display: inline-block; font-size: 0.7rem; padding: 3px 8px; border: 1px solid #666; margin-top: 10px; border-radius: 20px; }
+
+/* 電腦版樣式微調 */
+@media (min-width: 768px) {
+    h1.glitch-text { font-size: 6rem; }
+    .timeline-container::before { left: 50%; transform: translateX(-50%); }
+    .timeline-item { margin-left: 0; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; }
+    .timeline-item.left { flex-direction: row-reverse; }
+    .timeline-item .content-box { width: 45%; }
+    .timeline-item.center { flex-direction: column; align-items: center; text-align: center; }
+    .timeline-item.center .content-box { width: 80%; border-left: none; border-top: 3px solid var(--primary); }
+}
+
+/* --- News Section --- */
+.news-section { padding: 100px 30px; background-color: #050505; }
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.news-card { border-bottom: 1px solid #333; padding-bottom: 20px; transition: 0.3s; }
+.news-image-placeholder { width: 100%; height: 200px; margin-bottom: 20px; }
+.news-text h4 { font-size: 1.5rem; margin: 10px 0; font-family: var(--font-en); }
+.news-text .date { color: var(--primary); font-size: 0.8rem; letter-spacing: 2px; }
+
+footer { text-align: center; padding: 50px 20px; font-size: 0.7rem; color: #555; letter-spacing: 1px; }
 
