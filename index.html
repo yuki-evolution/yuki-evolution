@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+TC:wght@300;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 
     <nav>
         <div class="logo">YUKI</div>
-        <div class="menu-icon">|||</div>
+        <div class="menu-btn"><i class="fas fa-bars"></i></div>
     </nav>
 
     <div class="video-bg">
@@ -36,69 +37,90 @@
         
         <header class="hero-section">
             <div class="hero-text-box">
-                <h2 class="glitch-text">QUEEN'S BACK</h2>
-                <p class="hero-desc">從純真到無畏。見證達爾文的步伐。</p>
+                <h2 class="glitch-text">QUEEN IS BACK</h2>
+                <p class="hero-desc">從平民天后到達爾文的進化</p>
+                <a href="#tour" class="cta-btn">WORLD TOUR 2025</a>
             </div>
         </header>
 
+        <div class="marquee-container">
+            <div class="marquee-content">
+                YUKI HSU • METAMORPHOSIS • DIVA • 1,000,000 COPIES • DARWIN'S PACE • EVOLUTION • 
+                YUKI HSU • METAMORPHOSIS • DIVA • 1,000,000 COPIES • DARWIN'S PACE • EVOLUTION •
+            </div>
+        </div>
+
         <section class="timeline-section">
             <h2 class="section-title">LEGACY</h2>
+            
             <div class="timeline-container">
                 <div class="timeline-item left">
                     <div class="year">1998</div>
                     <div class="content-box">
-                        <h3>The First Step</h3>
-                        <p>飛起來 / 妙妙妙</p>
-                        <span class="tag">Iconic</span>
+                        <h3>The Phenomenon</h3>
+                        <p>首張EP《飛起來》與專輯《妙妙妙》</p>
+                        <div class="stat-box">
+                            <span class="stat-num">100萬+</span>
+                            <span class="stat-label">銷量紀錄</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item right">
                     <div class="year">2000</div>
                     <div class="content-box">
-                        <h3>Love</h3>
-                        <p>愛 / 分飛</p>
-                        <span class="tag">Classic</span>
+                        <h3>Love & Life</h3>
+                        <p>《愛》/《向前衝》國民情歌</p>
+                        <div class="stat-box">
+                            <span class="stat-num">TOP 1</span>
+                            <span class="stat-label">KTV 點播</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="timeline-item center">
                     <div class="year">2024</div>
                     <div class="content-box special">
-                        <h3>Darwin's Pace</h3>
-                        <p>攻蛋 / 進化</p>
-                        <span class="tag">New Era</span>
+                        <h3>Reborn</h3>
+                        <p>《達爾文的步伐》攻蛋演唱會</p>
+                        <div class="stat-box">
+                            <span class="stat-num">SOLD OUT</span>
+                            <span class="stat-label">秒殺紀錄</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="section-title">VISION</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item item-1">
+                    <div class="gallery-caption">STYLE</div>
+                </div>
+                <div class="gallery-item item-2">
+                    <div class="gallery-caption">STAGE</div>
+                </div>
+                <div class="gallery-item item-3">
+                    <div class="gallery-caption">SOUL</div>
+                </div>
+                <div class="gallery-item item-4">
+                    <div class="gallery-caption">VOICE</div>
                 </div>
             </div>
         </section>
         
-        <section class="news-section">
+        <section class="news-section" id="tour">
              <h2 class="section-title">UPDATES</h2>
              <div class="news-grid">
                 <article class="news-card">
-                    <div class="news-text">
-                        <span class="date">OCT 2025</span>
-                        <h4>World Tour Announced</h4>
-                        <p>Get ready for the Queen.</p>
-                    </div>
+                    <div class="news-tag">TOUR</div>
+                    <h4>World Tour 2025: Evolution</h4>
+                    <p>台北 / 東京 / 上海 / 紐約</p>
+                    <button class="read-more">GET TICKETS</button>
                 </article>
                 <article class="news-card">
-                    <div class="news-text">
-                        <span class="date">NOV 2025</span>
-                        <h4>Behind The Scenes</h4>
-                        <p>Exclusive look at the new MV.</p>
-                    </div>
-                </article>
-             </div>
-        </section>
-
-        <footer>
-            <div class="social-links">
-                <span>IG</span> <span>FB</span> <span>YT</span>
-            </div>
-            <p>&copy; 2025 YUKI HSU OFFICIAL.</p>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                    <div class="news-tag">MUSIC</div>
+                    <h4>New Single: Pleasure</h4>
+                    <p>Coming Soon on Spotify & Apple Music</p>
+                    <button class="read-more">
