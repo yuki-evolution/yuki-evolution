@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+TC:wght@300;500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+TC:wght@300;500;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -37,9 +37,10 @@
         
         <header class="hero-section">
             <div class="hero-text-box">
+                <div class="hero-label">OFFICIAL SITE</div>
                 <h2 class="glitch-text">QUEEN IS BACK</h2>
                 <p class="hero-desc">從平民天后到達爾文的進化</p>
-                <a href="#tour" class="cta-btn">WORLD TOUR 2025</a>
+                <a href="#tour" class="cta-btn">GET TICKETS</a>
             </div>
         </header>
 
@@ -50,77 +51,128 @@
             </div>
         </div>
 
-        <section class="timeline-section">
-            <h2 class="section-title">LEGACY</h2>
-            
-            <div class="timeline-container">
-                <div class="timeline-item left">
-                    <div class="year">1998</div>
-                    <div class="content-box">
-                        <h3>The Phenomenon</h3>
-                        <p>首張EP《飛起來》與專輯《妙妙妙》</p>
-                        <div class="stat-box">
-                            <span class="stat-num">100萬+</span>
-                            <span class="stat-label">銷量紀錄</span>
+        <section class="disco-section">
+            <h2 class="section-title">DISCOGRAPHY</h2>
+            <div class="disco-grid">
+                <div class="disco-item">
+                    <div class="disco-inner">
+                        <div class="disco-front" style="background: linear-gradient(45deg, #ff0055, #222);">
+                            <span>1998</span>
+                            <h3>飛起來</h3>
+                        </div>
+                        <div class="disco-back">
+                            <p>EP / Debut</p>
+                            <button>LISTEN</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="timeline-item right">
-                    <div class="year">2000</div>
-                    <div class="content-box">
-                        <h3>Love & Life</h3>
-                        <p>《愛》/《向前衝》國民情歌</p>
-                        <div class="stat-box">
-                            <span class="stat-num">TOP 1</span>
-                            <span class="stat-label">KTV 點播</span>
+                <div class="disco-item">
+                    <div class="disco-inner">
+                        <div class="disco-front" style="background: linear-gradient(45deg, #00e5ff, #222);">
+                            <span>1998</span>
+                            <h3>妙妙妙</h3>
+                        </div>
+                        <div class="disco-back">
+                            <p>Album / 1M Copies</p>
+                            <button>LISTEN</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="timeline-item center">
-                    <div class="year">2024</div>
-                    <div class="content-box special">
-                        <h3>Reborn</h3>
-                        <p>《達爾文的步伐》攻蛋演唱會</p>
-                        <div class="stat-box">
-                            <span class="stat-num">SOLD OUT</span>
-                            <span class="stat-label">秒殺紀錄</span>
+                <div class="disco-item">
+                    <div class="disco-inner">
+                        <div class="disco-front" style="background: linear-gradient(45deg, #ffcc00, #222);">
+                            <span>2000</span>
+                            <h3>LOVE</h3>
+                        </div>
+                        <div class="disco-back">
+                            <p>Album / Classic</p>
+                            <button>LISTEN</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="disco-item">
+                    <div class="disco-inner">
+                        <div class="disco-front" style="background: linear-gradient(45deg, #fff, #444);">
+                            <span>2024</span>
+                            <h3>達爾文</h3>
+                        </div>
+                        <div class="disco-back">
+                            <p>Single / New Era</p>
+                            <button>LISTEN</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="gallery-section">
-            <h2 class="section-title">VISION</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item item-1">
-                    <div class="gallery-caption">STYLE</div>
+        <section class="timeline-section">
+            <h2 class="section-title">LEGACY</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <span class="year-label">1998</span>
+                    <h3>The Phenomenon</h3>
+                    <p>席捲全台的怪獸旋風，百萬銷量紀錄保持者。</p>
                 </div>
-                <div class="gallery-item item-2">
-                    <div class="gallery-caption">STAGE</div>
+                <div class="timeline-item">
+                    <span class="year-label">2024</span>
+                    <h3>The Evolution</h3>
+                    <p>重返小巨蛋，以達爾文的步伐宣告女王回歸。</p>
                 </div>
-                <div class="gallery-item item-3">
-                    <div class="gallery-caption">SOUL</div>
+            </div>
+        </section>
+
+        <section class="tour-section" id="tour">
+            <h2 class="section-title">LIVE TOUR 2025</h2>
+            <div class="tour-table">
+                <div class="tour-row">
+                    <div class="tour-date">OCT 12</div>
+                    <div class="tour-city">TAIPEI</div>
+                    <div class="tour-venue">Taipei Arena</div>
+                    <button class="tour-btn">SOLD OUT</button>
                 </div>
-                <div class="gallery-item item-4">
-                    <div class="gallery-caption">VOICE</div>
+                <div class="tour-row">
+                    <div class="tour-date">NOV 05</div>
+                    <div class="tour-city">KAOHSIUNG</div>
+                    <div class="tour-venue">K-Arena</div>
+                    <button class="tour-btn active">TICKETS</button>
+                </div>
+                <div class="tour-row">
+                    <div class="tour-date">DEC 20</div>
+                    <div class="tour-city">TOKYO</div>
+                    <div class="tour-venue">Budokan</div>
+                    <button class="tour-btn active">TICKETS</button>
+                </div>
+                <div class="tour-row">
+                    <div class="tour-date">JAN 15</div>
+                    <div class="tour-city">HONG KONG</div>
+                    <div class="tour-venue">Coliseum</div>
+                    <button class="tour-btn active">RSVP</button>
                 </div>
             </div>
         </section>
         
-        <section class="news-section" id="tour">
-             <h2 class="section-title">UPDATES</h2>
-             <div class="news-grid">
-                <article class="news-card">
-                    <div class="news-tag">TOUR</div>
-                    <h4>World Tour 2025: Evolution</h4>
-                    <p>台北 / 東京 / 上海 / 紐約</p>
-                    <button class="read-more">GET TICKETS</button>
-                </article>
-                <article class="news-card">
-                    <div class="news-tag">MUSIC</div>
-                    <h4>New Single: Pleasure</h4>
-                    <p>Coming Soon on Spotify & Apple Music</p>
-                    <button class="read-more">
+        <section class="newsletter-section">
+            <div class="newsletter-box">
+                <h3>JOIN THE EMPIRE</h3>
+                <p>Be the first to know about new music and tour dates.</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="ENTER YOUR EMAIL">
+                    <button type="button">SUBSCRIBE</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-spotify"></i>
+            </div>
+            <p>&copy; 2025 YUKI HSU OFFICIAL.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
